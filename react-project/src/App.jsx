@@ -1,9 +1,22 @@
 import "./App.css"
 
+function Header() {
+    return (
+    <header>
+      <h1>Eve's Kitchen</h1>
+    </header>
+  );
+}
+
 
 function App() {
  return (
-  <h1>Hello React!!</h1>
+    <div>
+         <Header/>
+    <main> 
+         <h2>We serve the most delicious food</h2>
+     </main>
+    </div>
  )
 }
 
