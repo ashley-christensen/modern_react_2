@@ -10,14 +10,31 @@ function Header({name, year}) {
   );
 }
 
+const items = ["Salad", "Salmon", "Fruit", "Steak", "Chicken"]
+const dishObjects = items.map((dish, i) => ({
+    id: i, 
+    title: dish
+}))
+
+console.log(dishObjects)
+function Main({dishes}) {
+    return (
+        <ul>
+           {dishes.map((dish) => (
+            <li key={dish.id} style={{ listStyleType: "none"}}>{dish.title}</li>
+           ))}
+        </ul>
+
+    )
+}
+
+
 function App() {
  return (
     <div>
          <Header name="Ashley" year="2025"/>
-    <main> 
-         <h2>We serve the most delicious food</h2>
-       
-     </main>
+         <Main dishes = {dishObjects}/>
+
     </div>
  )
 }
