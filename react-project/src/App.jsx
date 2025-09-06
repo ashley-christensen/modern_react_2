@@ -1,4 +1,5 @@
 import "./App.css"
+import chef from "./images/chef.jpg"
 
 function Header({name, year}) {
     
@@ -16,18 +17,19 @@ const dishObjects = items.map((dish, i) => ({
     title: dish
 }))
 
-console.log(dishObjects)
 function Main({dishes}) {
     return (
-        <ul>
-           {dishes.map((dish) => (
-            <li key={dish.id} style={{ listStyleType: "none"}}>{dish.title}</li>
-           ))}
-        </ul>
+        <main>
+            <img src={chef} height={200} alt="photo of smiling chef owner"/>
+            <ul>
+               {dishes.map((dish) => (
+                <li key={dish.id} style={{ listStyleType: "none"}}>{dish.title}</li>
+               ))}
+            </ul>
+        </main>
 
     )
 }
-
 
 function App() {
  return (
