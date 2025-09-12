@@ -40,10 +40,12 @@ function Main({dishes}) {
 }
 
 function App() {
-    const [status, setStatus] = useState("Open");
-    console.log(status, setStatus);
+    const [isOpen, setIsOpen] = useState(true);
+    console.log(isOpen);
  return (
     <div>
+        <h1>The restaurant is currently {isOpen ? "Opened" : "Closed"}</h1>
+        <button onClick={() => setIsOpen(prev => !prev)}>{isOpen ? "Close" : "Open"} Restaurant</button>
          <Header name="Ashley" year="2025"/>
          <Main dishes = {dishObjects}/>
 
