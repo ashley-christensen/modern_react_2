@@ -41,7 +41,7 @@ function Main({dishes}) {
 
 function App() {
     const [status, setStatus] = useState("Open");
-    console.log(status);
+    console.log(status, setStatus);
  return (
     <div>
          <Header name="Ashley" year="2025"/>
