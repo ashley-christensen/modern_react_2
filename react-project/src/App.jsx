@@ -18,14 +18,15 @@ const dishObjects = items.map((dish, i) => ({
     title: dish
 }))
 
-function Main({dishes}) {
+function Main({dishes, openStatus, onStatus}) {
     return (
         <>
         <div>
-            <h2>Menu</h2>
+            <button onClick={() => onStatus(true)}/> 
+            <h2>Welcome to our wonderful restaurant. We're: {openStatus ? "Open" : "Closed"}</h2>
         </div>
         <main>
-            <img 
+            <img
                 src={chef} 
                 height={200} 
                 alt="photo of a smiling chef owner"/>
@@ -40,14 +41,13 @@ function Main({dishes}) {
 }
 
 function App() {
-    const [isOpen, setIsOpen] = useState(true);
-    console.log(isOpen);
+    const [status, setStatus] = useState(true);
  return (
     <div>
-        <h1>The restaurant is currently {isOpen ? "Opened" : "Closed"}</h1>
-        <button onClick={() => setIsOpen(prev => !prev)}>{isOpen ? "Close" : "Open"} Restaurant</button>
+        <h1>The restaurant is currently {status ? "Open" : "Closed"}</h1>
+        <button onClick={() => setStatus(!status)}>{status ? "Close" : "Open"} Restaurant</button>
          <Header name="Ashley" year="2025"/>
-         <Main dishes = {dishObjects}/>
+         <Main dishes = {dishObjects} openStatus={status} onStatus={setStatus}/>
 
     </div>
  )
