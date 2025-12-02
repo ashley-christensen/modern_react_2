@@ -19,6 +19,7 @@ const dishObjects = items.map((dish, i) => ({
 }))
 
 function Main({dishes, openStatus, onStatus}) {
+    console.log("test")
     return (
         <>
         <div>
